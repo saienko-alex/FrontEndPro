@@ -1,3 +1,11 @@
+let operandA = getOperand('Введите число?');
+let evenSum = 0;
+let oddSum = 0;
+let evenNumbers = getEvenSum(operandA);
+let oddNumbers = getOddSum(operandA);
+alert(`сумма четных: ${evenNumbers}`);
+alert(`сумма нечетных: ${oddNumbers}`);
+
 
 function getOperand(title) {
     let value = prompt(title);
@@ -11,7 +19,6 @@ function isOperandInvalid(value) {
     return value === null || value.trim() === '' || isNaN(value) || value <= 0;
 }
 
-let evenSum = 0;
 function getEvenSum(operandA) {
     let i = 0;
     while (i <= operandA) {
@@ -21,7 +28,6 @@ function getEvenSum(operandA) {
     return evenSum;
 }  
 
-let oddSum = 0;
 function getOddSum(operandA) {
     let i = 1;
     while (i <= operandA) {
@@ -32,11 +38,7 @@ function getOddSum(operandA) {
 }  
 
 
-let operandA = getOperand('Введите число?');
-let evenNumbers = getEvenSum(operandA);
-let oddNumbers = getOddSum(operandA);
-alert(`сумма четных: ${evenNumbers}`);
-alert(`сумма нечетных: ${oddNumbers}`);
+
 
 
 
