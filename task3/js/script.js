@@ -28,11 +28,13 @@ function getEvenSum(operandA) {
     return evenSum;
 }  
 
+
 function getOddSum(operandA) {
     let i = 1;
     while (i <= operandA) {
         oddSum += i;
         i = i+2
+        console.log(oddSum)
     }
     return oddSum;
 }  
