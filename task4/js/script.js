@@ -1,8 +1,7 @@
 
 let action = getAction('введите действие?')
-let numbers = getNumbers();
-let inputNumbers = getInputNumbers(numbers);
-let inputResult = getInputResult();
+let times = getTimes();
+let resultExpression = getResultExpression(action, times);
 
 
 
@@ -14,47 +13,81 @@ function getAction(action) {
     return action;
 }
 
-function getNumbers() {
+function getTimes() {
     let value = prompt('Введите количество действий?');
-    while(isNumbersInvalid(value)) {
+    while(isTimesInvalid(value)) {
         value = prompt('Введите количество действий?');
     }
-    return value;
+    return +value;
 }
 
-function isNumbersInvalid(value) {
+function isTimesInvalid(value) {
     return value === null || value.trim() === '' || isNaN(value) || value <= 2;
 }
 
-function getInputResult() {
-    let num = prompt('Введите число?');
-    while(isInputResultInvalid(num)) {
-        num = prompt('Введите число?');
+function getNumbers(title) {
+    let num = prompt(title);
+    while(isNumbersInvalid(num)) {
+        num = prompt(title);
     }
-    return num;
+    return +num;
 }
 
-function isInputResultInvalid(num) {
+function isNumbersInvalid(num) {
     return num === null || num.trim() === '' || isNaN(num) || num <= 0;
 }
 
-function getInputNumbers() {
-    let inputSum = 1;
-    for(let i = 1; i <= numbers; i++) {
-        let inputResult = getInputResult()
-        if(action === '*') {
-            inputSum = inputSum * inputResult;
-        } else if(action === '+') {
-            inputSum = inputSum + inputResult;
-        } else if(action === '-') {
-            inputSum = inputSum + inputResult;
-        } else if(action === '/') {
-            inputSum = inputSum + inputResult;
-        }         
+function getResultExpression(operation, counts) {
+    let result = getNumbers('введите число 1');
+    let expression = result;
+
+    for(let i = 1; i < counts; i++) {
+        const number = getNumbers('введите число ' + (i + 1))
+
+        result = calculate(result, number, operation);
+        expression += operation + number;
     }
-    return inputSum;
+    return `${expression} = ${result}`;
 }
-alert()
+
+function calculate(a, b, action) {
+    switch (action) {
+        case '+':
+            return a + b;
+        case '-': 
+            return a - b;
+        case '/':
+            return a / b;
+        case '*':
+            return a * b; 
+    }
+}
+
+
+resultExpression
+
+
+
+
+
+
+// function getInputNumbers() {
+//     let inputSum = 1;
+//     for(let i = 1; i <= times; i++) {
+//         let inputResult = getInputResult()
+//         if(action === '*') {
+//             inputSum = inputSum * inputResult;
+//         } else if(action === '+') {
+//             inputSum = inputSum + inputResult;
+//         } else if(action === '-') {
+//             inputSum = inputSum + inputResult;
+//         } else if(action === '/') {
+//             inputSum = inputSum + inputResult;
+//         }         
+//     }
+//     return inputSum;
+// }
+// alert()
 
 
 
