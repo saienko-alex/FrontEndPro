@@ -27,8 +27,8 @@ let groupAvarageMark = calculateGroupAverageMark(students);
 
 
 function calculateStudentAverageMark(arr) {
-    return arr.marks.reduce((prev,item)=>
-    prev+item)/arr.marks.length
+    return arr.marks.reduce((acc,item)=>
+    acc+item)/arr.marks.length
 }
 alert(studentsAvarageMark);
 
@@ -38,7 +38,7 @@ function calculateGroupAverageMark(students) {
         all.push(students[i].marks)
     }
     all = all.flat()
-    return all.reduce((p,n)=>p+n)/all.length
+    return all.reduce((acc,item)=>acc+item)/all.length
 }
 alert(groupAvarageMark);
 
