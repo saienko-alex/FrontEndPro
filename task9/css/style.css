@@ -1,0 +1,28 @@
+.page-item {
+    display:inline-block;
+    text-align: center;
+}
+.list-item {
+    display:inline-block;
+    text-align: center;
+    border: 4px solid rgb(255, 5, 5);
+    padding: 10px 80px 20px;
+    margin-bottom: 0px;
+}
+
+.list-title {
+    font-weight: 700;
+    font-size: 20px;
+    display: block;
+    text-align: center;
+    margin-top: 0px;
+    
+}
+.list-done {
+    text-decoration: line-through;
+}
+.form-item {
+    border: 4px solid rgb(0, 0, 0);
+    padding: 10px;
+    margin: 10px 0;
+}
