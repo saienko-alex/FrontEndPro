@@ -7,16 +7,9 @@ buttonEl.addEventListener('click', onAddButtonClick);
 function onAddButtonClick() {
     const newToDoList = getValues();
 
-    // listEl.addEventListener('click', () => {
-    //     liEl.remove();
-    // });
-
     addtoDoList(newToDoList);
     resetForm();
 
-    // const liEl = document.createElement('li');
-    // liEl.textContent = 'to do';
-    // listEl.append(liEl);
 }
 
 function getValues() {
