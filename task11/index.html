@@ -10,21 +10,19 @@
 </head>
 <body>
     <div class="page-item">
-        <ul id="list" class="list-item">
-            <p class="list-title">ToDo list</p>
-        </ul>
+        <p class="list-title">ToDo list</p>
+        <div id="list" class="list-item"></div>
         <form class="form-item">
             <input type="hidden" id="id" value="" />
-            <input type="text" id="todolist" placeholder="enter">
+            <input type="text" id="todoinput" placeholder="enter">
             <button type="button" id="button">Save</button>
         </form>
     </div> 
     <script type="text/template" id="AddToDoItemTemplate">
-        <li class="task-item" data-contact-id="{{id}}">
+        <div class="task-item {{doneClass}}" data-todo-id="{{id}}">
             {{title}}
             <span class="delete-btn">x</span>
-            <button class="edit-btn">Edit</button>
-        <li>
+        <div>
     </script>
 </body>
 </html>
