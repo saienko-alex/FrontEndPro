@@ -1,39 +1,51 @@
+function Hamburger(size) {
+    this._size = size;
+    this._toppings = [];
+}  
 
+Hamburger.SIZE_SMALL = {price: 50, callories: 20};
+Hamburger.SIZE_MEDIUM = {price: 75, callories: 30};
+Hamburger.SIZE_BIG = {price: 100, callories: 40};
 
-Hamburger.SIZE_SMALL = {price: 50, calories: 20};
-Hamburger.SIZE_MEDIUM = {price: 75, calories: 30};
-Hamburger.SIZE_BIG = {price: 100, calories: 40};
+Hamburger.CHEESE = {price: 20, callories: 5};
+Hamburger.SALAD = {price: 10, callories: 20};
+Hamburger.POTATO = {price: 15, callories: 10};
+Hamburger.SEASONING = {price: 15, callories: 0};
+Hamburger.MAYO = {price: 20, callories: 5};
+ 
 
-Hamburger.CHEESE = {price: 20, calories: 5};
-Hamburger.SALAD = {price: 10, calories: 20};
-Hamburger.POTATO = {price: 15, calories: 10};
-Hamburger.SEASONING = {price: 15, calories: 0};
-Hamburger.MAYO = {price: 20, calories: 5};
+Hamburger.prototype.addTopping = function(topping) {
+    this._toppings.push(topping);
 
+    this.recalculate();
+}
+Hamburger.prototype.recalculate = function() {
+    this._price = this._toppings.reduce(
+        (acc, {price}) => (acc += price), 
+        this._size.price
+        );
+    this._callories = this._toppings.reduce(
+        (acc, {callories}) => (acc += callories),
+         this._size.callories
+        );     
+}
+
+Hamburger.prototype.getPrice = function() {
+    return this._price
+}
+Hamburger.prototype.getCallories = function() {
+    return this._callories
+} 
 
 const hamburger = new Hamburger(Hamburger.SIZE_SMALL);
 
-function Hamburger(hamburgerSize) {
-    this.price = hamburgerSize.price;
-    this.calories = hamburgerSize.calories;
-}    
-
-Hamburger.prototype.addTopping = function(ingridients) {
-    this.getPrice(ingridients.price);
-    this.getCallories(ingridients.calories);
-}
-Hamburger.prototype.getPrice = function(price) {
-    return this.price += price; 
-}
-Hamburger.prototype.getCallories = function(calories) {
-    return this.calories += calories;
-} 
+ 
 hamburger.addTopping(Hamburger.POTATO);
 hamburger.addTopping(Hamburger.CHEESE);
 
 
-console.log("Price with sauce: ", +hamburger.getPrice(0));
-console.log("Callories with sauce: ", +hamburger.getCallories(0));
+console.log("Price with sauce: ", +hamburger.getPrice());
+console.log("Callories with sauce: ", +hamburger.getCallories());
 
 
 
