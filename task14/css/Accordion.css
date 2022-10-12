@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.accordionset-body {
+    display: block;
+    align-items: center;
+    border: 2px solid grey;
+    margin: 5px 50px;
+    text-align: center;
+    
+    
+   
+}
+.accordionset-bodies .accordionset-body {
+    display: none;
+}
+
+.accordionset-bodies {
+    float: left;
+}
+.accordionset-titles {
+    height: 30px;
+}
+.accordionset-titles .accordionset-title{
+    font-size: large;
+    text-align: center;
+    border: 2px solid grey;
+    margin: 5px 100px;
+    cursor: pointer;
+    transition:  0.4s;
+    margin-bottom: 40px;
+}
+.accordionset-titles .accordionset-active {
+    background-color: grey;
+    position: relative;
+}
+.accordionset-bodies .accordionset-active {
+    display: block; 
+}
