@@ -1,0 +1,69 @@
+/* * {
+    box-sizing: border-box;
+    margin: 0;
+} */
+.page-item {
+    display:inline-block;
+    text-align: center;
+}
+.list-item {
+    display:inline-block;
+    text-align: center;
+    border: 4px solid rgb(255, 5, 5);
+    padding: 10px 80px 20px;
+    margin-bottom: 0px;
+    
+}
+
+.list-title {
+    font-weight: 700;
+    font-size: 20px;
+    display: block;
+    text-align: center;
+    margin-top: 0px;
+    
+}
+.task-item {
+    list-style-type: none;
+    cursor: pointer;
+}
+.list-done {
+    text-decoration: line-through;
+}
+.form-item {
+    border: 4px solid rgb(0, 0, 0);
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.delete-btn {
+    border: 1px solid rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+
+.tr {
+    border: 1px solid rgb(12, 3, 3);
+}
+
+.invalid-input {
+    background-color: red;
+}
+
+/* .contact-item {
+    max-width: 1110px;
+    min-width: 767px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contacts-style {
+    width: 25%;
+    display: inline-block; 
+    margin-right: 30px;
+    vertical-align: top;
+}
+#contactsList {
+    display: flex;
+    justify-content: space-between;
+} */
