@@ -1,18 +1,4 @@
 
-// const TASK_ITEM_CLASS = 'task-item';
-// const TASK_ITEM_SELECTOR = '.' + TASK_ITEM_CLASS;
-// const LIST_DONE_CLASS = 'list-done';
-// const DELETE_BTN_CLASS = 'delete-btn';
-// const EDIT_BTN_CLASS = 'edit-btn';
-
-// const listEl = document.querySelector('#list');
-// const buttonEl = document.querySelector('#button');
-// const toDoList = document.querySelector('#todolist');
-// const idEl = document.querySelector('#id');
-
-// const taskITemTemplate = document.querySelector('#AddToDoItemTemplate').innerHTML;
-// listEl.addEventListener('click', onListClick);
-// buttonEl.addEventListener('click', onAddButtonClick);
 const API_URL = 'https://5dd3d5ba8b5e080014dc4bfa.mockapi.io/users/';
 const DELETE_BTN_CLASS = 'close-button';
 const CONTACT_ITEM_CLASS = 'contact-item';
@@ -55,6 +41,7 @@ function fetchContactList() {
             renderContactList(contactList)
         });
 }
+
 function renderContactList(contactList) {
     contactsListEl.innerHTML = '';
     contactList.forEach(renderContactListEl);
@@ -129,8 +116,6 @@ function fillForm({ id, name, surname, email }) {
     emailEl.value = email;
 }
 function  addContactList(contact) {
-    // contactList.id = Date.now();
-    // contactList.push(contact);
 
     fetch(API_URL, {
         method: 'POST',
@@ -188,7 +173,7 @@ function resetValidation() {
 }
 
 function editContact(id) {
-    // const contact = contactList.find((item) => item.id === id);
+
 
     fetch(API_URL + id)
         .then((res) => res.json())
@@ -200,15 +185,7 @@ function editContact(id) {
 }
 
 function updateContact(contact, id) {
-    // const item = contactList.find((item) => item.id === id);
-    // const updatedItem = {
-    //     ...item,
-    //     id: item.id,
-    //     name: item.name,
-    //     surname: item.surname,
-    //     email: item.email,
-    // };
-    
+
     contactList = contactList.map((item) => (item.id !== contact.id ? item : contact));
     
     fetch(API_URL + id, {
@@ -223,110 +200,8 @@ function updateContact(contact, id) {
 
 
 
-// const contact = contactList.find((item) => item.id === id);
-// const updatedItem = {
-//     ...contact,
-// };
-// contactList = contactList.map((item) => (item.id !== id ? item : updatedItem));
-
-// fetch(API_URL + id, {
-//     method: 'PUT',
-//     body: JSON.stringify(updatedItem),
-//     headers: {
-//         'Content-Type': 'application/json',
-//     },
-// });
 
 
-
-
-
-
-
-
-
-
-
-
-// function onAddContactButtonClick() {
-//     if(!validateValues()) {
-//         return;
-//     }
-//     const newContact = getValues();
-
-//    addContact(newContact);
-//    resetForm();
-// }
-
-// function onContactsClick(event) {
-//     // console.log(event.target);
-//     if(event.target.classList.contains('close-button')) {
-//         deleteContactsList(event.target.parentElement);
-//     } 
-    
-// }
-// function getValues() {
-//     return {
-//         name: nameEl.value,
-//         surname: surnameEl.value,
-//         phone: phoneEl.value,
-//     }
-// }
-
-// function addContact(contact) {
-
-//     const contactHtml = generateHtml(contact)
-//     contactsListEl.insertAdjacentHTML('beforeend', contactHtml)
-
-// }
-
-// function generateHtml({name, surname, phone}) {
-//     let template = contactsTemplate
-//         .replaceAll('{{name}}', name)
-//         .replaceAll('{{surname}}', surname)
-//         .replaceAll('{{phone}}', phone);
-
-//     return template;
-// }    
-
-
-// function resetForm() {
-//     nameEl.value = '';
-//     surnameEl.value = '';
-//     phoneEl.value = '';
-// }
-
-// function deleteContactsList(contactEl) {
-//     contactEl.remove();
-// }
-
-
-// function validateValues() {
-//     resetValidation();
-
-//     if(nameEl.value === '') {
-//         nameEl.classList.add('invalid-input');
-//         addContactButtonEl.disabled = true;
-//         return false;
-//     } if(surnameEl.value === '') {
-//         surnameEl.classList.add('invalid-input');
-//         addContactButtonEl.disabled = true;
-//         return false
-//     } if(phoneEl.value === '') {
-//         phoneEl.classList.add('invalid-input');
-//         addContactButtonEl.disabled = true;
-//         return false
-//     } else {
-//         addContactButtonEl.disabled = false;
-//     }
-//     return true;
-// }
-
-// function resetValidation() {
-//     nameEl.classList.remove("invalid-input");
-//     surnameEl.classList.remove("invalid-input");
-//     phoneEl.classList.remove("invalid-input");
-// }
 
 
 

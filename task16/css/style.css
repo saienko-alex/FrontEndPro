@@ -1,7 +1,4 @@
-/* * {
-    box-sizing: border-box;
-    margin: 0;
-} */
+
 .page-item {
     display:inline-block;
     text-align: center;
@@ -50,20 +47,3 @@
     background-color: red;
 }
 
-/* .contact-item {
-    max-width: 1110px;
-    min-width: 767px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.contacts-style {
-    width: 25%;
-    display: inline-block; 
-    margin-right: 30px;
-    vertical-align: top;
-}
-#contactsList {
-    display: flex;
-    justify-content: space-between;
-} */
