@@ -1,0 +1,87 @@
+class AddTodosListView {
+    formEl = null;
+    hiddenInputEl = null;
+    inputEl = null;
+    buttonEl = null;
+    #config = null;
+    todoListInput = document.querySelector('#todolist');
+
+    static CLASSES = {
+    
+        TASK_DONE_CLASS: 'done',
+    };
+
+//     static todoITemTemplate = `
+//     <div class="task-item {{doneClass}}" data-todo-id="{{id}}">
+//        {{title}}
+//    </div>
+//     `;
+    
+
+    static generateTodoItemHtml({ id, title, isDone }) {
+        return AddTodosListView.todoITemTemplate
+            .replaceAll('{{title}}', title)
+            .replaceAll(
+                '{{doneClass}}',
+                isDone ? AddTodosListView.CLASSES.TASK_DONE_CLASS : ''
+            )
+            .replaceAll('{{id}}', id);
+    }
+    
+    static getValues() {
+        return {
+            title: todoListInput.value,
+        };
+    }
+        
+    constructor(config) {
+        this.#config = config;
+    
+        this.#initAddTodo();
+        console.log(this.formEl)
+    }
+    #initAddTodo() {
+        this.formEl = document.createElement('form');
+        this.formEl.id = 'newTaskForm';
+
+        this.hiddenInputEl = document.createElement('input');
+        this.hiddenInputEl.id = 'id';
+        this.hiddenInputEl.type = 'hidden';
+
+        this.inputEl = document.createElement('input');
+        this.inputEl.id = 'todolist';
+        this.inputEl.type = 'text';
+
+        this.buttonEl = document.createElement('button');
+        this.buttonEl.id = 'button';
+        this.buttonEl.type = 'button';
+
+        this.formEl.append(this.hiddenInputEl);
+        this.formEl.append(this.inputEl);
+        this.formEl.append(this.buttonEl);
+
+
+        this.buttonEl.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            const newToDoItem = AddTodosListView.getValues();
+
+            addTodoList(newToDoItem);
+            resetForm();;
+        });
+    }  
+
+    renderList(list) {
+        this.formEl.innerHTML = list
+            .map(AddTodosListView.generateTodoItemHtml)
+            .join('');
+    }
+
+    addTodoList(newToDoItem) {
+        this.#config. onAddTodos(newToDoItem);
+    } 
+    resetForm() {
+        taskNameInput.value = '';
+    }   
+
+}
