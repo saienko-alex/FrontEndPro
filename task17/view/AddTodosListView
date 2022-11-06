@@ -11,11 +11,11 @@ class AddTodosListView {
         TASK_DONE_CLASS: 'done',
     };
 
-//     static todoITemTemplate = `
-//     <div class="task-item {{doneClass}}" data-todo-id="{{id}}">
-//        {{title}}
-//    </div>
-//     `;
+    static todoITemTemplate = `
+    <div class="task-item {{doneClass}}" data-todo-id="{{id}}">
+       {{title}}
+   </div>
+    `;
     
 
     static generateTodoItemHtml({ id, title, isDone }) {
