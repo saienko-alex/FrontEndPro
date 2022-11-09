@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+.task-list {
+    margin-bottom: 20px;
+}
+.header-form {
+    border: 1px solid #bbb;
+    text-align: end;
+}
+.input {
+    margin-right: 50px;
+}
+.mainform {
+    border: 1px solid #bbb;
+    text-align: start;
+    display: block;
+    height: 100vh;
+    padding: 25px 0 25px 25px;
+}
+.sticker-block {
+    display: inline-block;
+    border: 1px solid #bbb;
+    text-align: center;
+    width: 24%;
+    height: 120px;
+}
+.header-block {
+    text-align: end;
+}
+.close-button {
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+   
+}
+.task-item {
+    color: #555;
+    border: 1px solid #bbb;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 5px 0;
+    font-size: 20px;
+    background-color: lightyellow;
+}
+
+.task-item.done {
+    background-color: lightgreen;
+}
+.delete-btn {
+    float: right;
+}
+
+#todoItemTemplate {
+    display: none;
+}

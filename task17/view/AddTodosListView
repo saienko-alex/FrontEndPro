@@ -12,9 +12,20 @@ class AddTodosListView {
     };
 
     static todoITemTemplate = `
-    <div class="task-item {{doneClass}}" data-todo-id="{{id}}">
-       {{title}}
-   </div>
+    <form id="newTaskForm">
+                <div class="row">
+                    <div class="ten columns">
+                        <input
+                            type="text"
+                            id="taskNameInput"
+                            class="u-full-width"
+                        />
+                    </div>
+                    <div class="two columns">
+                        <input type="submit" id="submitBtn" value="Add" />
+                    </div>
+                </div>
+            </form> -->
     `;
     
 
@@ -41,27 +52,29 @@ class AddTodosListView {
         console.log(this.formEl)
     }
     #initAddTodo() {
-        this.formEl = document.createElement('form');
-        this.formEl.id = 'newTaskForm';
+        this.el = htmlToElement(AddTodosListView.todoITemTemplate);
 
-        this.hiddenInputEl = document.createElement('input');
-        this.hiddenInputEl.id = 'id';
-        this.hiddenInputEl.type = 'hidden';
+        // this.formEl = document.createElement('form');
+        // this.formEl.id = 'newTaskForm';
 
-        this.inputEl = document.createElement('input');
-        this.inputEl.id = 'todolist';
-        this.inputEl.type = 'text';
+        // this.hiddenInputEl = document.createElement('input');
+        // this.hiddenInputEl.id = 'id';
+        // this.hiddenInputEl.type = 'hidden';
 
-        this.buttonEl = document.createElement('button');
-        this.buttonEl.id = 'button';
-        this.buttonEl.type = 'button';
+        // this.inputEl = document.createElement('input');
+        // this.inputEl.id = 'todolist';
+        // this.inputEl.type = 'text';
 
-        this.formEl.append(this.hiddenInputEl);
-        this.formEl.append(this.inputEl);
-        this.formEl.append(this.buttonEl);
+        // this.buttonEl = document.createElement('button');
+        // this.buttonEl.id = 'button';
+        // this.buttonEl.type = 'button';
+
+        // this.formEl.append(this.hiddenInputEl);
+        // this.formEl.append(this.inputEl);
+        // this.formEl.append(this.buttonEl);
 
 
-        this.buttonEl.addEventListener('click', (e) => {
+        this.el.addEventListener('click', (e) => {
             e.preventDefault();
 
             const newToDoItem = AddTodosListView.getValues();
@@ -83,5 +96,12 @@ class AddTodosListView {
     resetForm() {
         taskNameInput.value = '';
     }   
+    htmlToElement(html) {
+        const container = document.createElement('div');
+
+        container.innerHTML = html;
+
+        return container.children[0];
+    }
 
 }
