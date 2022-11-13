@@ -1,2 +1,2 @@
-const el = document.querySelector('.container')
-new TodosController(el);
+
+new TodosController(document.querySelector('.container'));

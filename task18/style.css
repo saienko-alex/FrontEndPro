@@ -5,6 +5,9 @@
 .task-list {
     margin-bottom: 20px;
 }
+.input-form {
+    display: flex;
+}
 .header-form {
     border: 1px solid #bbb;
     text-align: end;
