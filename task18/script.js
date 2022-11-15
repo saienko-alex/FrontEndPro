@@ -1,4 +1,4 @@
-new StickerBoardController(document.querySelector('.mainform'))
+new StickerBoardController(document.querySelector('.container'))
 
 
 

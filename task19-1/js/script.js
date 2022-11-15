@@ -12,9 +12,9 @@
     </a>
     </div>
     `;
+
     $('.xzoom, .xzoom-gallery').xzoom({tint: '#333', Xoffset: 15});
     initPhoto();  
-    
     
     function initPhoto() {
         fetchPhotoAlbum();
@@ -28,8 +28,7 @@
             renderPhotoAlbum($photoList)
         });
     }
-
-        
+   
     function renderPhotoAlbum(photolist) {
         const $values = $(photolist.map(generatePhotoAlbumHtml).join('')); 
         $listEl.append($values);  

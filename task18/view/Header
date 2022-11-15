@@ -1,0 +1,35 @@
+class Header {
+    #config = null;
+    el = null
+    addButtonEl = document.querySelector('#addBtn');
+
+
+    // static htmlToElement(html) {
+    //     const container = document.createElement('div');
+    
+    //     container.innerHTML = html;
+    
+    //     return container.children[0];   
+    // } 
+    // static Template = `
+    //     <div id="headerform" class="header-form">
+    //         <input type="submit" id="addBtn" value="Add sticker" class="input" />
+    //     </div> 
+    // `;
+
+    constructor(config) {
+        this.#config = config;
+        this.#initView();
+
+    }
+
+    #initView() {
+
+        // this.el = Header.htmlToElement(Header.Template);
+
+        this.addButtonEl.addEventListener('click', () => {
+            console.log('hello')
+        });   
+
+    }
+}
