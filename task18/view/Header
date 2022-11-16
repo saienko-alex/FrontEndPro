@@ -4,18 +4,24 @@ class Header {
     addButtonEl = document.querySelector('#addBtn');
 
 
-    // static htmlToElement(html) {
-    //     const container = document.createElement('div');
+    static htmlToElement(html) {
+        const container = document.createElement('div');
     
-    //     container.innerHTML = html;
+        container.innerHTML = html;
     
-    //     return container.children[0];   
-    // } 
-    // static Template = `
-    //     <div id="headerform" class="header-form">
-    //         <input type="submit" id="addBtn" value="Add sticker" class="input" />
-    //     </div> 
-    // `;
+        return container.children[0];   
+    } 
+
+    static Template = `
+        <div id="headerform" class="header-form">
+            <input type="submit" id="addBtn" value="Add sticker" class="input" />
+        </div> 
+    `;
+
+    static CLASSES = {
+        BUTTON: 'input',
+        
+    };
 
     constructor(config) {
         this.#config = config;
@@ -25,11 +31,19 @@ class Header {
 
     #initView() {
 
-        // this.el = Header.htmlToElement(Header.Template);
+        this.el = Header.htmlToElement(Header.Template);
 
-        this.addButtonEl.addEventListener('click', () => {
-            console.log('hello')
-        });   
+        this.el.addEventListener('click', (e) => {
+
+            switch (true) {
+                case e.target.classList.contains(
+                    Header.CLASSES.BUTTON
+                ):
+                    return console.log('hello button');
+            }
+        });
+
+        
 
     }
 }

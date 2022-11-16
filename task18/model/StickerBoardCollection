@@ -1,6 +1,7 @@
 const API_URL = 'https://5dd3d5ba8b5e080014dc4bfa.mockapi.io/stickers/';
 
 class StickerBoardCollection {
+    
     list = [];
     #api = new RestApi(API_URL);
 
@@ -12,6 +13,19 @@ class StickerBoardCollection {
     deleteSticker(id) {
         return this.#api.delete(id).then(() => {
             this.list = this.list.filter((item) => item.id !== id);
+        });
+    }
+
+    updateSticker(id, values) {
+        const item = this.list.find((item) => item.id === id);
+        const updatedItem = {
+            ...item,
+            ...values
+        };
+        
+        return this.#api.update(updatedItem).then(() => {
+            this.list = this.list.map((item) => item.id === updatedItem.id ? updatedItem : item
+            );
         });
     }
     createSticker(newStickerItem) {
