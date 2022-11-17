@@ -4,7 +4,9 @@ class StickerBoardController {
     #headerView = null;
 
     constructor(container) {
-        this.#headerView = new Header({});
+        this.#headerView = new Header({
+            onCreate: () => this.createSticker(),
+        });
         container.append(this.#headerView.el)
 
         this. #sctickerBoardView = new StickerBoard({
@@ -27,6 +29,11 @@ class StickerBoardController {
     }
     updateSticker(id, values) {
         this.#collection.updateSticker(id, values).then(() => {
+            this.#sctickerBoardView.renderList(this.#collection.list)
+        });
+    }
+    createSticker() {
+        this.#collection.createSticker().then(() => {
             this.#sctickerBoardView.renderList(this.#collection.list)
         });
     }

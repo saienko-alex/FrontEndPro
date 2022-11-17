@@ -22,19 +22,18 @@ class StickerBoardCollection {
             ...item,
             ...values
         };
-        
+
         return this.#api.update(updatedItem).then(() => {
             this.list = this.list.map((item) => item.id === updatedItem.id ? updatedItem : item
             );
         });
     }
-    createSticker(newStickerItem) {
+    createSticker() {
         const value = {
             description: '',
         }
-
-        return this.#api.create(newStickerItem).then((value) => {
-            this.list = [...this.list, value];
+        return this.#api.create(value).then((item) => {
+            this.list = [...this.list, item];
         });
     }    
 }

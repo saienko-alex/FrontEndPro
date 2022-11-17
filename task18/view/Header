@@ -39,11 +39,15 @@ class Header {
                 case e.target.classList.contains(
                     Header.CLASSES.BUTTON
                 ):
-                    return console.log('hello button');
+                return this.createNewSticker();
             }
         });
 
         
 
     }
+    createNewSticker() {
+        return this.#config.onCreate();
+    }
+
 }
