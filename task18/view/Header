@@ -42,9 +42,6 @@ class Header {
                 return this.createNewSticker();
             }
         });
-
-        
-
     }
     createNewSticker() {
         return this.#config.onCreate();
