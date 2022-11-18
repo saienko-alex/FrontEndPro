@@ -28,7 +28,7 @@ class TodosCollection {
             this.list = this.list.filter((item) => item.id !== id);
         });
     }
-    createTodoList(newToDoItem) {
+    addTodoList(newToDoItem) {
         newToDoItem.isDone = false;
 
         return this.#api.create(newToDoItem).then((data) => {

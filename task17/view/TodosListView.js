@@ -44,6 +44,9 @@ class TodosListView {
 
         this.el.className = 'task-list u-full-width';
 
+
+
+
         this.el.addEventListener('click', (e) => {
             const todoId = TodosListView.getTodoId(e.target);
 

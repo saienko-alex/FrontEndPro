@@ -24,8 +24,8 @@ class TodosController {
     
     }
     addTodoList(newToDoItem) {
-        this.#collection.createTodoList(newToDoItem).then(() => {
-            this.#addTodosListView.renderList(this.#collection.list)
+        this.#collection.addTodoList(newToDoItem).then(() => {
+            this.#listView.renderList(this.#collection.list)
         });
     }
 

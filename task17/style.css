@@ -21,3 +21,13 @@
 #todoItemTemplate {
     display: none;
 }
+.input-form {
+    display: block;
+}
+.button-element {
+    float: right;
+}
+.input-element {
+    float: left;
+    width: 850px;
+}

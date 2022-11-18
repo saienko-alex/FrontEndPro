@@ -1,7 +1,6 @@
 class AddTodosListView {
     el = null;
     formEl = null;
-    hiddenInputEl = null;
     inputEl = null;
     buttonEl = null;
     #config = null;
@@ -16,21 +15,20 @@ class AddTodosListView {
         this.formEl = document.createElement('form');
         this.formEl.classList.add('input-form"')
 
-        this.hiddenInputEl = document.createElement('input');
-        this.hiddenInputEl.type = 'hidden';
-
         this.inputEl = document.createElement('input');
         this.inputEl.name = 'title';
         this.inputEl.type = 'text';
+        this.inputEl.classList = 'input-element';
 
         this.buttonEl = document.createElement('button');
         this.buttonEl.type = 'button';
+        this.buttonEl.textContent = 'ADD';
+        this.buttonEl.classList = 'button-element';
 
-        this.formEl.append(this.hiddenInputEl);
         this.formEl.append(this.inputEl);
         this.formEl.append(this.buttonEl);
 
-        this.formEl.addEventListener('click', (e) => {
+        this.buttonEl.addEventListener('click', (e) => {
                 e.preventDefault();
 
                 const newToDoItem = this.#getValues();
