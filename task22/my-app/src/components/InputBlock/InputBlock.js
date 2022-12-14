@@ -21,7 +21,7 @@ export default class InputBlock extends Component {
                 <input name='name' placeholder="contact name"/>
                 <input name='surname' placeholder="contact surname"/>
                 <input name='email' placeholder="contact email"/>
-                <button id="addContactButton">Save</button>
+                <button>Save</button>
               </form>  
       )
     }
