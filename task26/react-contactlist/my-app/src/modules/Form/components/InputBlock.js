@@ -5,8 +5,8 @@ import useContactsBook from '../../common/hooks/useContactsBook';
 function InputBlock({ onSave, currentContact }) {
   const navigate = useNavigate();
 
-  const {contactID} = useParams();
-  const { contactList, changeContact } = useContactsBook(contactID);
+  // const {contactID} = useParams();
+  // const { contactList, changeContact } = useContactsBook(contactID);
 
 
 

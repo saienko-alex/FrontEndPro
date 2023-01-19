@@ -1,10 +1,10 @@
 import { Button, Paper, TextField } from '@mui/material';
-// import { Field, Form, Formik } from 'formik';
+
 import { NavLink, useNavigate, useParams } from 'react-router-dom';
 
 import MyTextField from '../../common/components/form/MyTextField';
 import { useState, useEffect } from 'react';
-// import useForm from '../../common/hooks/useForm';
+
 import useUser from '../hooks/useUser';
 
 const REGEXP =

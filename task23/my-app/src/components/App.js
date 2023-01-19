@@ -17,7 +17,7 @@ class App extends Component {
   toggleTodoList(id) {
     const todoItem = this.state.todoList.find((item) => item.id === id);
 
-    updateTodos({...item, isDone: !item.isDone}).then((data) => {
+    updateTodos({...todoItem, isDone: !todoItem.isDone}).then((data) => {
       this.setState(this.state.todoList.map((item) => (item.id === id ? data : item)));
     });
   }

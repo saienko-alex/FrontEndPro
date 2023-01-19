@@ -53,9 +53,6 @@ export default class Form extends Component {
     }
 
 
-   
-
-
     render() {
         return (
             <form onSubmit={this.onFormSubmit}>

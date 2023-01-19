@@ -8,7 +8,7 @@ function ContactList({ contacts, onDelete, onEdit }) {
     <HeaderBlock />
     <tbody>
         {contacts.map((item) => (
-            <ContactListItem key = {item.id} contact={item} onDelete={onDelete} onEdit={onEdit}/>
+            <ContactListItem key = {item.id} contact={item} onDelete={onDelete} onEdit={onEdit} create={create}/>
         ))}
     </tbody>
     </>  
