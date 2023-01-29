@@ -1,15 +1,21 @@
-import React from 'react'
+
+import { Box } from '@mui/material';
+import LeftNav from './categories/common/components/LeftNav';
 import { Outlet } from 'react-router-dom';
-import ProtectedRoute from '../common/authorization/components/ProtectedRoute';
+import ProtectedRoute from '../common/auth/components/ProtectedRoute';
+import React from 'react';
+import TopBar from './categories/common/components/TopBar';
 
 function AdminApp() {
-  return (
-    <div>
+    return (
         <ProtectedRoute roles={['admin', 'sales']}>
-            <Outlet />
+            <TopBar />
+            <LeftNav />
+            <Box maxWidth="lg" sx={{ mt: 10 }}>
+                <Outlet />
+            </Box>
         </ProtectedRoute>
-    </div>
-  )
+    );
 }
 
-export default AdminApp
+export default AdminApp;

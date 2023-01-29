@@ -1,6 +1,12 @@
-import {createTheme} from '@mui/material'
-import palette from './palette';
+import { createTheme } from '@mui/material/styles';
 
-export default createTheme({
-     palette,
-});
+export const theme = createTheme();
+
+export default theme;
+
+// import {createTheme} from '@mui/material'
+// import palette from './palette';
+
+// export default createTheme({
+//      palette,
+// });

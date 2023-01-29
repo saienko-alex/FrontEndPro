@@ -1,24 +1,19 @@
-import React from 'react'
 import { NavLink } from 'react-router-dom';
-import UseUser from '../../../common/authorization/hooks/UseUser';
-import { Button, Paper } from '@mui/material';
+import React from 'react';
+import useUser from '../../../common/auth/hooks/useUser';
 
 function Landing() {
-    const user = UseUser();
-  return (
-    <div>
-        <Paper>
+    const user = useUser();
+
+    return (
+        <div>
             {JSON.stringify(user)}
             Landing
-            <Button variant='text' to='/auth' component={NavLink}>
-                Login
-            </Button>
-            <Button variant='text' to='/admin' component={NavLink}>
-                Admin Panel
-            </Button>
-        </Paper>
-    </div>
-  )
+            <NavLink to="/auth">Login</NavLink>
+            <NavLink to="/auth/logout">Logout</NavLink>
+            <NavLink to="/admin">Admin Panel</NavLink>
+        </div>
+    );
 }
 
-export default Landing
+export default Landing;
